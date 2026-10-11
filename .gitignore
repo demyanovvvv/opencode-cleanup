@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+*.log
+*.db
+*.db-wal
+*.db-shm
+.DS_Store
+release-artifacts/
+*.tgz
+.env
+.env.*
+.opencode/package.json
+.opencode/package-lock.json
+.opencode/bun.lock

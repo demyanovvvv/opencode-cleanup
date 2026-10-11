@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support documentation
+    url: https://github.com/demyanovvvv/opencode-cleanup/blob/main/SUPPORT.md
+    about: Installation help and reporting guidelines.
+  - name: Security reporting
+    url: https://github.com/demyanovvvv/opencode-cleanup/blob/main/SECURITY.md
+    about: Report vulnerabilities privately.

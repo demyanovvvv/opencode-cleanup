@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a reproducible problem with the plugin.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Use synthetic fixtures. Do not upload real databases, conversation history or credentials. See SECURITY.md for vulnerability reporting."
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, architecture, Node.js, OpenCode and plugin versions; Bun if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the command or palette action used.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized error output or synthetic fixture

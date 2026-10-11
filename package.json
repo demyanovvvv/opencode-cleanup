@@ -1,0 +1,49 @@
+{
+  "name": "opencode-cleanup",
+  "version": "0.2.1",
+  "description": "Integrated OpenCode storage and memory dashboard with selective, archived cleanup.",
+  "type": "module",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/demyanovvvv/opencode-cleanup.git" },
+  "homepage": "https://github.com/demyanovvvv/opencode-cleanup#readme",
+  "bugs": { "url": "https://github.com/demyanovvvv/opencode-cleanup/issues" },
+  "engines": { "node": ">=22.16.0", "opencode": ">=1.18.34 <2" },
+  "exports": { "./tui": "./dist/tui.js" },
+  "bin": { "opencode-cleanup": "./dist/worker/cli.js" },
+  "files": ["dist", "scripts", "install.cmd", "uninstall.cmd", "README.md", "README.ru.md", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md", "SUPPORT.md", "docs", "LICENSE"],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "test:tui": "bun test --preload ./scripts/tui-test-preload.mjs ./tests/ui.smoke.tsx",
+    "check": "npm run typecheck && npm test && npm run build",
+    "install:plugin": "node scripts/setup.mjs install",
+    "uninstall:plugin": "node scripts/setup.mjs uninstall",
+    "smoke:worker": "node scripts/worker-smoke.mjs",
+    "smoke:installer": "node scripts/installer-smoke.mjs",
+    "release:prepare": "node scripts/prepare-release.mjs",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.18.34 <2",
+    "@opentui/core": "0.4.5",
+    "@opentui/solid": "0.4.5",
+    "solid-js": "1.9.12"
+  },
+  "dependencies": {
+    "jsonc-parser": "3.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-typescript": "^7.28.0",
+    "@opencode-ai/plugin": "1.18.34",
+    "@opentui/core": "0.4.5",
+    "@opentui/solid": "0.4.5",
+    "@types/node": "^22.18.0",
+    "babel-preset-solid": "1.9.12",
+    "esbuild": "^0.25.0",
+    "solid-js": "1.9.12",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
